@@ -1,0 +1,3 @@
+nombre: Isaí Barrera
+edad: 25
+hobby: jugar básquet
