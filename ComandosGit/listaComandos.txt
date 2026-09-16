@@ -1,0 +1,1 @@
+git clone: Sirve para crear una copia exacta de un repositorio existente (generalmente remoto, como en GitHub) y descargarla en tu máquina local para poder trabajar en él.
