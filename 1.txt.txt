@@ -1,3 +1,4 @@
 nombre: Isaí Barrera
-edad: 25
 hobby: jugar básquet
+Película favorita: Ford vs ferrari
+comida favorita: hamburguesa
