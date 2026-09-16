@@ -1,1 +1,3 @@
 git clone: Sirve para crear una copia exacta de un repositorio existente (generalmente remoto, como en GitHub) y descargarla en tu máquina local para poder trabajar en él.
+
+git commit: Sirve para sellar y guardar de forma permanente los cambios que ya están preparados, creando un punto de control, auditoría o "fotografía" en el historial de tu repositorio local.
