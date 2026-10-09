@@ -146,8 +146,8 @@ function reiniciar() {
     clearInterval(intervalo);
 
     // 2. Pintamos en pantalla las variables inicializadas
-    document.getElementById('txtVidas').innerText = vidas;
-    document.getElementById('txtPuntaje').innerText = puntaje;
+    mostrarEnSpan("txtVidas", vidas);
+    mostrarEnSpan("txtPuntaje", puntaje);
     
     // 3. Invocamos a iniciar
     iniciar(); 
