@@ -1,31 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fredoka:wght@500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --fondo: #0b1f19;
+  --superficie: #132d24;
+  --superficie-clara: #1b3b2e;
+  --texto: #f5f7e9;
+  --texto-suave: #b8cbbd;
+  --limon: #d9f45b;
+  --limon-hover: #e8ff80;
+  --borde: rgba(217, 244, 91, 0.22);
+  --sombra: 0 22px 60px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
-  text-align: center;
+  min-height: 100vh;
   margin: 0;
-  padding: 20px;
+  padding: 38px 20px;
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: var(--texto);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(91, 145, 70, 0.22), transparent 55%),
+    radial-gradient(circle at 8% 80%, rgba(217, 244, 91, 0.06), transparent 28%),
+    var(--fondo);
 }
 
 .contenedor {
-  max-width: 800px;
+  width: min(100%, 820px);
   margin: 0 auto;
 }
 
+.encabezado {
+  margin-bottom: 26px;
+}
+
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 12px;
+  padding: 7px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: rgba(217, 244, 91, 0.08);
+  color: var(--limon);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  font-family: 'Fredoka', 'Trebuchet MS', sans-serif;
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+h1 span {
+  color: var(--limon);
+}
+
+.subtitulo {
+  margin: 12px 0 9px;
+  color: var(--texto-suave);
+  font-size: 1.05rem;
+}
+
+h2 {
+  margin: 0;
+  color: #8fa99a;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.zona-juego {
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid var(--borde);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(27, 59, 46, 0.94), rgba(16, 42, 33, 0.96));
+  box-shadow: var(--sombra);
+}
+
+.marco-canvas {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  background: #10251d;
+  line-height: 0;
+}
+
 canvas {
-  background-color: #111827;
-  border: 3px solid #38bdf8;
   display: block;
-  margin: 20px auto;
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #111827;
 }
 
 .panel {
-  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 80px);
+  margin: 0;
+  padding: 18px 12px 5px;
 }
 
-.botones button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 16px;
+.dato {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 105px;
+  text-align: left;
+}
+
+.dato-icono {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+  background: rgba(217, 244, 91, 0.09);
+  font-size: 1.2rem;
+}
+
+.dato-titulo {
+  margin: 0 0 2px;
+  color: var(--texto-suave);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.dato-valor {
+  margin: 0;
+  color: var(--limon);
+  font-family: 'Fredoka', 'Trebuchet MS', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.separador {
+  width: 1px;
+  height: 38px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 700;
   cursor: pointer;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
+}
+
+.boton:active {
+  transform: translateY(0);
+}
+
+.boton:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.boton-mover {
+  color: #172617;
+  background: var(--limon);
+  box-shadow: 0 5px 16px rgba(217, 244, 91, 0.12);
+}
+
+.boton-mover:hover {
+  background: var(--limon-hover);
+  box-shadow: 0 8px 22px rgba(217, 244, 91, 0.2);
+}
+
+.boton-reiniciar {
+  border-color: rgba(255, 255, 255, 0.17);
+  color: var(--texto);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.boton-reiniciar:hover {
+  border-color: var(--borde);
+  background: rgba(217, 244, 91, 0.08);
+}
+
+.ayuda {
+  margin: 15px 0 0;
+  color: #8fa99a;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 26px 12px;
+  }
+
+  .encabezado {
+    margin-bottom: 20px;
+  }
+
+  .zona-juego {
+    padding: 9px;
+    border-radius: 18px;
+  }
+
+  .panel {
+    gap: 20px;
+    padding-top: 14px;
+  }
+
+  .dato {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .dato-icono {
+    width: 37px;
+    height: 37px;
+    border-radius: 11px;
+    font-size: 1rem;
+  }
+
+  .dato-valor {
+    font-size: 1.4rem;
+  }
+
+  .botones {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .boton {
+    min-height: 44px;
+    padding: 0 13px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boton {
+    transition: none;
+  }
 }

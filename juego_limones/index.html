@@ -1,31 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102a22">
   <title>Caza Limones</title>
-  <link rel="stylesheet" href="limones.css"/> 
+  <link rel="stylesheet" href="limones.css">
   <script src="utils.js"></script>
- 
 </head>
 <body onload="iniciar();">
-  <div class="contenedor">
-    <h1>Atrapar Limones</h1>
-    <p>Si del cielo te caen limones ..... </p>
-    <h2> Autor : Isaí Barrera</h2>
-    <canvas id="areaJuego" width="600" height="400"> </canvas>
-    <div class="panel">
-      <p>Puntaje: <span id="txtPuntaje">0</span></p>
-      <p>Vidas: <span id="txtVidas">3</span></p>
+  <main class="contenedor">
+    <header class="encabezado">
+      <div class="etiqueta">🍋 RETO ARCADE</div>
+      <h1>Atrapar <span>Limones</span></h1>
+      <p class="subtitulo">¡Que no se te escape ni uno!</p>
+      <h2>Autor: Isaí Barrera</h2>
+    </header>
 
-    </div>
-    <div class="botones">
-      <button onclick="moverIzquierda();"> Izquierda </button>
-      <button onclick="moverDerecha();">Derecha</button>
-      <button onclick="reiniciar()">REINICIAR</button>
-      
-    </div>
-  </div>
+    <section class="zona-juego" aria-label="Zona de juego">
+      <div class="marco-canvas">
+        <canvas id="areaJuego" width="600" height="400">
+          Tu navegador no admite el elemento canvas.
+        </canvas>
+      </div>
+      <div class="panel" aria-label="Marcador del juego">
+        <div class="dato">
+          <span class="dato-icono" aria-hidden="true">⭐</span>
+          <div>
+            <p class="dato-titulo">Puntaje</p>
+            <p class="dato-valor"><span id="txtPuntaje">0</span></p>
+          </div>
+        </div>
+        <div class="separador" aria-hidden="true"></div>
+        <div class="dato">
+          <span class="dato-icono" aria-hidden="true">❤️</span>
+          <div>
+            <p class="dato-titulo">Vidas</p>
+            <p class="dato-valor"><span id="txtVidas">3</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="botones" aria-label="Controles del juego">
+      <button class="boton boton-mover" type="button" onclick="moverIzquierda();">
+        <span aria-hidden="true">←</span> Izquierda
+      </button>
+      <button class="boton boton-mover" type="button" onclick="moverDerecha();">
+        Derecha <span aria-hidden="true">→</span>
+      </button>
+      <button class="boton boton-reiniciar" type="button" onclick="reiniciar()">
+        <span aria-hidden="true">↻</span> Reiniciar
+      </button>
+    </nav>
+    <p class="ayuda">Usa los controles para moverte y atrapar los limones.</p>
+  </main>
   <script src="limones.js"></script>
-  
-
 </body>
 </html>
