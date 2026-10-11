@@ -2,8 +2,8 @@ let canvas=document.getElementById("areaJuego");
 let ctx=canvas.getContext("2d");
 
 const ALTURA_SUELO=20;
-const ALTURA_PERSONAJE=60;
-const ANCHO_PERSONAJE=40;
+const ALTURA_PERSONAJE=75;
+const ANCHO_PERSONAJE=50;
 const ANCHO_LIMON=20;
 const ALTURA_LIMON=20;
 
@@ -34,7 +34,7 @@ function dibujarSuelo(){
 
 }
 function dibujarPersonaje(){
-    ctx.fillStyle="yellow";
+    ctx.fillStyle="red";
     ctx.fillRect(personajeX,personajeY,ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
 
@@ -121,7 +121,7 @@ function detectarPiso(){
 
     // PARTE 1: Validar si llega a 0 vidas
     if (vidas === 0) {
-        alert("GAME OVER"); // Mensaje de fin de juego
+        alert("Perdiste, intentalo de nuevo"); // Mensaje de fin de juego
         clearInterval(intervalo); // PARTE 3: Detenemos la caída del limón
     }
 
@@ -151,4 +151,8 @@ function reiniciar() {
     
     // 3. Invocamos a iniciar
     iniciar(); 
+}
+
+function desaparecerPersonaje (){
+    ctx.clearRect(personajeX,personajeY,ANCHO_PERSONAJE,ALTURA_PERSONAJE);
 }
